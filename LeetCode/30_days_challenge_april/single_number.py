@@ -8,11 +8,7 @@ Output: 4
 
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        num={}
+        num=0
         for i in nums:
-            if i in num:
-                num[i] += 1
-                del num[i]
-            else: 
-                num[i]= 1
-        return list(num.keys())[0] 
+            num = num ^ i
+        return num
