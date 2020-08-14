@@ -28,41 +28,33 @@ Testcase1: sum of elements from 2nd position to 4th position is 12
 Testcase2: sum of elements from 1st position to 5th position is 15
 */
 #include <bits/stdc++.h>
-
 using namespace std;
 
-int main()
- {
+int main() {
     int t;
     cin>>t;
-    while(t--)
+    while (t--)
     {
-        int n;
-        long long k;
+        int n, start= 0 , last = 0, k , csum=0;
+        bool flag = false;
         cin>>n>>k;
         int arr[n];
-        
-        int last=0;
-        int start=0;
-        unsigned long long  currsum=0;
-        bool flag=false;
-        
-        for(int i=0;i<n;i++)
-            cin>>arr[i];
-        
-        for(int i=0;i<n;i++)
+        for(int i = 0;i<n;i++)
         {
-            currsum += arr[i];
-            if(currsum>=k)
+            cin>>arr[i];
+        }
+        for(int i = 0;i<n;i++)
+        {
+            csum += arr[i];
+            if(csum>=k)
             {
-                last=i;
-                while(k<currsum && start<last)
+                last = i;
+                while(k<csum && start<last)
                 {
-                    currsum -= arr[start];
-                    ++start;
+                    csum -=arr[start];
+                    start++;
                 }
-                
-                if(currsum==k)
+                if(csum == k)
                 {
                     cout<<start+1<<" "<<last+1<<endl;
                     flag = true;
@@ -70,9 +62,12 @@ int main()
                 }
             }
         }
-        if(flag==false)
-        cout<<-1<<endl;
+        if(flag == false)
+        {
+            cout<<-1<<endl;
+        }
         
     }
+    
 	return 0;
 }
