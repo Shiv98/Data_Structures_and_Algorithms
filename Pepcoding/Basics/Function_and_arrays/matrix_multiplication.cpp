@@ -27,7 +27,7 @@ int main()
             for(int j = 0;j<c2;j++)
             {
                 ans[i][j]=0;
-                for (int k = 0; k < r1; k++) 
+                for (int k = 0; k < c1; k++) 
                     ans[i][j] += arr1[i][k] * arr2[k][j]; 
             }
         }
