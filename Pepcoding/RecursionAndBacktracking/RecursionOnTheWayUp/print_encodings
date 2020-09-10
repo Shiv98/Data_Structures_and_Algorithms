@@ -16,6 +16,7 @@ Use the input-output below to get more understanding on what is required
 103 -> jc
 303 -> No output possible. But such a string maybe passed. In this case print nothing.
 */
+
 import java.io.*;
 import java.util.*;
 
